@@ -1,20 +1,20 @@
 /* CSS Reset */
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
 /* Navigation Bar */
-#navbar{
-    /* border: 2px solid black; */
+#navbar {
     display: flex;
     align-items: center;
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
-#navbar::before{
+#navbar::before {
     content: "";
     background-color: white;
     position: absolute;
@@ -27,47 +27,53 @@
 }
 
 /* Navigation Bar: Logo and Image */
-#logo{
-    /* border: 2px solid red; */
+#logo {
     margin: 0px 100px;
 }
 
-#logo img{
-    /* border: 2px solid green; */
-    /* margin: 34px 10px; */
+#logo img {
     height: auto;
     width: 160px;
 }
 
 /* Navigation Bar: List Styling */
-#navbar ul{
+#navbar ul {
     display: flex;
     width: 100%;
     flex-direction: row;
 }
 
-#navbar ul li{
+#navbar ul li {
     list-style: none;
     font-size: 1.3rem;
 }
 
-#navbar ul li a{
+#navbar ul li a {
     display: block;
     margin: 0px 10px;
     padding: 10px 15px;
-    /* border-radius: 20px; */
     text-decoration: none;
     color: black;
 }
 
-#navbar ul li a:hover{
+#navbar ul li a:hover {
     color: white;
-    background-color: black;
+    background-color: rgb(124, 124, 124);
+    box-shadow: 3px 3px 4px black;
+}
+
+/* Navigation Bar: Search Box */
+#search {
+    margin: 0px 50px;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 15px;
+    border: 3px solid black;
+    box-shadow: 3px 3px 4px grey;
 }
 
 /* Home Section */
-#home{
-    /* border: 2px solid black; */
+#home {
     display: flex;
     flex-direction: column;
     padding: 3px 200px;
@@ -76,7 +82,7 @@
     height: 560px;
 }
 
-#home::before{
+#home::before {
     content: "";
     background: url(background/bg1.jpg) no-repeat center center/cover;
     position: absolute;
@@ -85,57 +91,121 @@
     height: 600px;
     width: 100%;
     z-index: -1;
-    opacity: 0.89;
+    opacity: 0.6;
 }
 
-#home h1{
-    align-self: flex-start;
-    font-family: 'Monoton', cursive;
+#home h1 {
+    align-self: flex-end;
+    font-family: 'Rubik Moonrocks', cursive;
+    font-weight: 550;
+    color: #006180;
 }
 
-#home p{
-    align-self: flex-start;
-    /* padding: 2px 12px; */
+#home p {
+    align-self: flex-end;
     font-size: 1.8rem;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Exo 2', sans-serif;
     color: black;
-    font-weight: bolder;
+    font-weight: 900;
+    color: #006180;
 }
 
 /* About US section */
-#aboutUs{
+#aboutUs {
     display: flex;
-    /* border: 2px solid black; */
     padding: 3px 275px;
     margin-bottom: 50px;
 }
 
-#aboutUs h1{
+#aboutUs h1 {
     padding: 15px 10px;
     font-family: 'Orbitron', sans-serif;
     color: #474747;
 }
 
-hr{
+#aboutUs hr {
     width: 40%;
     border: 2px outset red;
     margin-bottom: 10px;
+    box-shadow: 1px 1px 3px grey;
 }
 
-#aboutUs p{
+#aboutUs p {
     padding: 15px 10px;
     font-size: 1.3rem;
     font-family: 'Ubuntu', sans-serif;
     color: #474747;
 }
 
+/* Events Section */
+#events {
+    position: relative;
+}
+
+#events::before {
+    content: "";
+    position: absolute;
+    background: grey;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+
+#events h1 {
+    padding: 25px 0px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#mock-en-joy hr {
+    width: 350px;
+    border: 3px outset red;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#alumni-buddy-prog hr {
+    width: 500px;
+    border: 3px outset red;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#event-details {
+    display: flex;
+    margin: 0px 34px;
+    padding-bottom: 40px;
+}
+
+#event-details .events {
+    /* border: 2px solid red; */
+    width: 100%;
+    padding: 20px 30px;
+    margin: 30px 20px;
+}
+
+.events h2 {
+    padding: 30px 0px;
+    font-family: 'Orbitron', sans-serif;
+    color: black;
+}
+
+.events p {
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+}
+
 /* Contact Us section */
-#contactUs{
+#contactUs {
     position: relative;
     color: white;
 }
 
-#contactUs::before{
+#contactUs::before {
     content: "";
     background: url(background/contact.jpg) no-repeat center center/cover;
     position: absolute;
@@ -147,55 +217,62 @@ hr{
     opacity: 0.7;
 }
 
-#contactUs h1{
+#contactUs h1 {
     font-family: 'Cormorant SC', serif;
 }
 
-.contact-details{
-    padding: 10px 50px;
+#contact-details{
+    display: flex;
+    align-items: center;
 }
 
-.contact-details p{
-    padding: 5px 0px;
-    font-size: 1.2rem;
-    font-family: 'Ubuntu', sans-serif;
+#contact-details div{
+    margin: 20px;
 }
 
-.contact-details a{
-    text-decoration: none;
-    color: #00ff97;
+#contact-details img{
+    width: 100px;
+    border-radius: 60px;
 }
 
-.contact-details a:hover{
-    color: grey;
+#contact-details .vl{
+    border-left: 2px solid white;
+    height: 150px;
+    margin: 0;
 }
 
-#contactUs h3{
+#contact-details ul li{
+    list-style: none;
+    padding: 5px 25px;
+    font-size: 1.1rem;
+}
+
+#contactUs h3 {
     font-size: 1.5rem;
     padding: 10px 0px;
     font-family: 'Cormorant SC', serif;
 }
 
-#contact-socialMedia{
+#contact-socialMedia {
     display: flex;
     justify-content: center;
 }
 
-#contact-socialMedia img{
+#contact-socialMedia img {
     height: 40px;
     padding: 10px 15px;
 }
 
-#contact-socialMedia img:hover{
+#contact-socialMedia img:hover {
     filter: brightness(50%);
 }
 
 /* Footer  */
-#copyright{
+#copyright {
     position: relative;
 }
 
-#copyright::before{
+#copyright::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -208,16 +285,18 @@ hr{
 }
 
 /* Utility Classes */
-.center{
+.center {
     text-align: center;
 }
 
-.h-primary{
+.h-primary {
     font-size: 4.8rem;
-    /* padding: 12px; */
 }
 
-.h-secondary{
+.h-secondary {
     font-size: 2.5rem;
-    /* padding: 12px; */
+}
+
+.h-tertiary {
+    font-size: 1.8rem;
 }
